@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: patch-webhook-job
+  namespace: {{ .Values.namespace }}
+spec:
+  template:
+    metadata:
+      name: patch-webhook-pod
+    spec:
+      serviceAccountName: default
+      containers:
+      - name: patch-webhook-container
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag}}"
+        args:
+        - patch
+        - --webhook-name=pod-identity-webhook
+        - --namespace={{ .Values.namespace }}
+        - --secret-name=pod-identity-webhook-cert
+        - --patch-validating=false
+      restartPolicy: Never

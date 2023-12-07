@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: certgen-job
+  namespace: {{ .Values.namespace }}
+spec:
+  template:
+    metadata:
+      name: certgen-pod
+    spec:
+      containers:
+      - name: certgen-container
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag}}"
+        args:
+        - create
+        - --host=pod-identity-webhook,pod-identity-webhook.irsa,pod-identity-webhook.irsa.svc,pod-identity-webhook.irsa.svc.local
+        - --namespace={{ .Values.namespace }}
+        - --secret-name=pod-identity-webhook-cert
+        - --cert-name=tls.crt
+        - --key-name=tls.key
+      restartPolicy: Never

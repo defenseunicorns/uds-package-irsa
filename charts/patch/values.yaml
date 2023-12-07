@@ -1,0 +1,5 @@
+namespace: irsa
+
+image:
+  repository: k8s.gcr.io/ingress-nginx/kube-webhook-certgen
+  tag: v1.3.0

@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/defenseunicorns/zarf/main/zarf.schema.json
+kind: ZarfPackageConfig
+metadata:
+  name: pod-identity-webhook
+  yolo: true
+  description: "Deploy Amazon EKS pod identity webhook for IRSA"
+  # x-release-please-start-version
+  version: "0.1.0"
+  # x-release-please-end
+
+variables:
+  - name: NAMESPACE
+    default: irsa
+
+components:
+  - name: certgen
+    required: true
+    charts:
+    - name: certgen
+      version: 0.1.0
+      namespace: default
+      localPath: charts/certgen
+      valuesFiles:
+        - values/certgen.yaml
+    actions:
+      onDeploy:
+        after:
+          - wait:
+              cluster:
+                kind: Job
+                name: certgen-job
+                condition: "'{.status.succeeded}'=1"
+                namespace: ${ZARF_VAR_NAMESPACE}
+            maxTotalSeconds: 30
+            description: Certgen job succeeded
+  
+  - name: webhook
+    required: true
+    charts:
+    - name: webhook
+      version: 0.1.0
+      namespace: default
+      localPath: charts/webhook
+      valuesFiles:
+        - values/webhook.yaml
+    actions:
+      onDeploy:
+        after:
+          - wait:
+              cluster:
+                kind: Deployment
+                name: pod-identity-webhook
+                condition: "'{.status.availableReplicas}'=1"
+                namespace: ${ZARF_VAR_NAMESPACE}
+            maxTotalSeconds: 30
+            description: Webhook deployed
+  
+  - name: patch
+    required: true
+    charts:
+    - name: patch
+      version: 0.1.0
+      namespace: default
+      localPath: charts/patch
+      valuesFiles:
+        - values/webhook.yaml
