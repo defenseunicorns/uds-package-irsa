@@ -2,7 +2,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: patch-webhook-job
-  namespace: {{ .Values.namespace }}
+  namespace: {{ .Release.Namespace }}
 spec:
   template:
     metadata:
@@ -15,7 +15,7 @@ spec:
         args:
         - patch
         - --webhook-name=pod-identity-webhook
-        - --namespace={{ .Values.namespace }}
+        - --namespace={{ .Release.Namespace }}
         - --secret-name=pod-identity-webhook-cert
         - --patch-validating=false
       restartPolicy: Never

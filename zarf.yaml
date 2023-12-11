@@ -8,20 +8,14 @@ metadata:
   version: "0.1.0"
   # x-release-please-end
 
-variables:
-  - name: NAMESPACE
-    default: irsa
-
 components:
   - name: certgen
     required: true
     charts:
     - name: certgen
       version: 0.1.0
-      namespace: default
+      namespace: irsa
       localPath: charts/certgen
-      valuesFiles:
-        - values/certgen.yaml
     actions:
       onDeploy:
         after:
@@ -30,7 +24,7 @@ components:
                 kind: Job
                 name: certgen-job
                 condition: "'{.status.succeeded}'=1"
-                namespace: ${ZARF_VAR_NAMESPACE}
+                namespace: irsa
             maxTotalSeconds: 30
             description: Certgen job succeeded
   
@@ -39,10 +33,8 @@ components:
     charts:
     - name: webhook
       version: 0.1.0
-      namespace: default
+      namespace: irsa
       localPath: charts/webhook
-      valuesFiles:
-        - values/webhook.yaml
     actions:
       onDeploy:
         after:
@@ -51,7 +43,7 @@ components:
                 kind: Deployment
                 name: pod-identity-webhook
                 condition: "'{.status.availableReplicas}'=1"
-                namespace: ${ZARF_VAR_NAMESPACE}
+                namespace: irsa
             maxTotalSeconds: 30
             description: Webhook deployed
   
@@ -60,7 +52,16 @@ components:
     charts:
     - name: patch
       version: 0.1.0
-      namespace: default
+      namespace: irsa
       localPath: charts/patch
-      valuesFiles:
-        - values/webhook.yaml
+    actions:
+      onDeploy:
+        after:
+          - wait:
+              cluster:
+                kind: Job
+                name: patch-webhook-job
+                condition: "'{.status.succeeded}'=1"
+                namespace: irsa
+            maxTotalSeconds: 30
+            description: Patch job succeeded
