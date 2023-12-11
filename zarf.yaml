@@ -5,7 +5,7 @@ metadata:
   yolo: true
   description: "Deploy Amazon EKS pod identity webhook for IRSA"
   # x-release-please-start-version
-  version: "0.1.0"
+  version: "0.0.0"
   # x-release-please-end
 
 components:

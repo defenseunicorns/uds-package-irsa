@@ -1,0 +1,29 @@
+name: Test packages
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: "ubuntu-latest"
+    timeout-minutes: 30
+    name: Test
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+      - name: Environment setup
+        uses: ./.github/actions/setup
+
+      - name: Test the package
+        run: uds run test-package
+
+      - name: Save logs
+        if: always()
+        uses: ./.github/actions/save-logs

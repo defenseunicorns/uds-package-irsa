@@ -1,0 +1,22 @@
+includes:
+  - create: ./tasks/create.yaml
+  - setup: ./tasks/setup.yaml
+  - deploy: ./tasks/deploy.yaml
+  - test: ./tasks/test.yaml
+
+tasks:
+  - name: setup-cluster
+    actions:
+      - task: setup:k3d-test-cluster
+
+  - name: create-package
+    actions:
+      - task: create:package
+
+  - name: deploy-package
+    actions:
+      - task: deploy:package
+
+  - name: test-package
+    actions:
+      - task: test:package
