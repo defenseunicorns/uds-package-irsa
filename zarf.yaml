@@ -12,10 +12,10 @@ components:
   - name: certgen
     required: true
     charts:
-    - name: certgen
-      version: 0.1.0
-      namespace: irsa
-      localPath: charts/certgen
+      - name: certgen
+        version: 0.1.0
+        namespace: irsa
+        localPath: charts/certgen
     actions:
       onDeploy:
         after:
@@ -27,14 +27,14 @@ components:
                 namespace: irsa
             maxTotalSeconds: 30
             description: Certgen job succeeded
-  
+
   - name: webhook
     required: true
     charts:
-    - name: webhook
-      version: 0.1.0
-      namespace: irsa
-      localPath: charts/webhook
+      - name: webhook
+        version: 0.1.0
+        namespace: irsa
+        localPath: charts/webhook
     actions:
       onDeploy:
         after:
@@ -46,14 +46,14 @@ components:
                 namespace: irsa
             maxTotalSeconds: 30
             description: Webhook deployed
-  
+
   - name: patch
     required: true
     charts:
-    - name: patch
-      version: 0.1.0
-      namespace: irsa
-      localPath: charts/patch
+      - name: patch
+        version: 0.1.0
+        namespace: irsa
+        localPath: charts/patch
     actions:
       onDeploy:
         after:

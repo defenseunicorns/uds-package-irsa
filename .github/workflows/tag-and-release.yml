@@ -40,7 +40,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish UDS Zarf Package
-        run: uds run -f tasks/publish.yaml packages
+        run: uds run -f tasks/publish.yaml package
 
       - name: Save logs
         if: always()
