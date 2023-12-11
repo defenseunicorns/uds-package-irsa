@@ -1,0 +1,6 @@
+tasks:
+  - name: package
+    description: "Create the Zarf Package"
+    actions:
+      - description: "Create the Zarf Package"
+        cmd: "zarf package create --confirm --no-progress"
