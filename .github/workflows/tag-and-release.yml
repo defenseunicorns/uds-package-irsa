@@ -1,4 +1,4 @@
-name: Publish UDS Core
+name: Publish Package
 
 on:
   push:
@@ -23,7 +23,7 @@ jobs:
     needs: tag-new-version
     if: ${{ needs.tag-new-version.outputs.release_created == 'true'}}
     runs-on: ubuntu-latest
-    name: Publish packages
+    name: Publish Package
 
     permissions:
       contents: read

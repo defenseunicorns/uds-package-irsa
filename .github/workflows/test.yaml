@@ -1,9 +1,14 @@
-name: Test packages
+name: Test Package
 
 on:
   pull_request:
     branches:
       - main
+
+# Abort prior jobs in the same workflow / PR
+concurrency:
+  group: test-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
