@@ -11,7 +11,8 @@
       ],
       "versioning": "default",
       "extra-files": [
-        "zarf.yaml"
+        "zarf.yaml",
+        "tasks/publish.yaml"
       ]
     }
   }
