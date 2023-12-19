@@ -18,7 +18,7 @@ The package is comprised of three Helm Charts
 ## Prerequisites
 
 * Kubernetes cluster >= v1.24
-* Zazf >= v0.31.2
+* Zarf >= v0.31.2
 
 ## Create
 
