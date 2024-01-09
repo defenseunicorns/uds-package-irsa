@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/defenseunicorns/uds-package-irsa/compare/v0.1.1...v0.1.2) (2024-01-09)
+
+
+### Bug Fixes
+
+* point to govcloud sts endpoint ([2650925](https://github.com/defenseunicorns/uds-package-irsa/commit/2650925213229a30319dd9f0af53b5d6637eea6c))
+
 ## [0.1.1](https://github.com/defenseunicorns/uds-package-irsa/compare/v0.1.0...v0.1.1) (2024-01-09)
 
 
