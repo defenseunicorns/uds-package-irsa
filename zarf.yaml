@@ -8,6 +8,9 @@ metadata:
   version: "0.1.0"
   # x-release-please-end
 
+variables:
+  - name: REGION
+
 components:
   - name: certgen
     required: true
