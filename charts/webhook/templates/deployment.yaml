@@ -25,6 +25,7 @@ spec:
         - --service-name=pod-identity-webhook
         - --annotation-prefix=irsa
         - --token-audience=irsa
+        - --aws-default-region=###ZARF_VAR_REGION###
         - --logtostderr
         volumeMounts:
         - name: cert
