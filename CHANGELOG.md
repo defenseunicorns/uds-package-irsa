@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/defenseunicorns/uds-package-irsa/compare/v0.1.0...v0.1.1) (2024-01-09)
+
+
+### Bug Fixes
+
+* add region to irsa package ([d61ab26](https://github.com/defenseunicorns/uds-package-irsa/commit/d61ab2689e0a998e87eca8427fde89334ac9a0ed))
+
 ## 0.1.0 (2023-12-11)
 
 
