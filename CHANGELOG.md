@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.2.0](https://github.com/defenseunicorns/uds-package-irsa/compare/v0.1.2...v0.2.0) (2024-07-19)
+
+
+### Bug Fixes
+
+* create/publish ([c5a3f86](https://github.com/defenseunicorns/uds-package-irsa/commit/c5a3f860f2fac36f4798b38f8f6b487be9f34ca7))
+* fake flavor ([4c769a2](https://github.com/defenseunicorns/uds-package-irsa/commit/4c769a24ba8daf0efb1f93c64ed78ffad75cb45d))
+* install only ([faeb9b3](https://github.com/defenseunicorns/uds-package-irsa/commit/faeb9b36f6bf595943b8acf44a542d05ee474ba3))
+* tasks ([57524b6](https://github.com/defenseunicorns/uds-package-irsa/commit/57524b61d809135e8c10843f8cf296945682aa77))
+
+
+### Miscellaneous
+
+* add codeowners ([60f7dea](https://github.com/defenseunicorns/uds-package-irsa/commit/60f7dea6bde9413de5c25def2b7cbe03d4ae5513))
+* add renovate config ([d9b7f0f](https://github.com/defenseunicorns/uds-package-irsa/commit/d9b7f0fb1105d74fee2d0ffc379bee1b2e3e4ac2))
+* common actions, flavor test ([196739a](https://github.com/defenseunicorns/uds-package-irsa/commit/196739aae0dfdbf3350cde7015060c990f40b82b))
+* **deps:** update dependency defenseunicorns/uds-common to v0.8.1 ([c4113e7](https://github.com/defenseunicorns/uds-package-irsa/commit/c4113e7da1134191e4c4e5c529d8b4a15e73b42e))
+* **deps:** update githubactions ([a1fd356](https://github.com/defenseunicorns/uds-package-irsa/commit/a1fd35628f8af440d47f6b94687fcbe3ce8dbae2))
+* **deps:** update irsa ([ec84ac2](https://github.com/defenseunicorns/uds-package-irsa/commit/ec84ac2ec54e277b7d4788c15d68dad8f4204919))
+* **deps:** update irsa to v1.4.1 (https://github.com/defenseunicorns/uds-package-irsa/pull/22) ([35153d1](https://github.com/defenseunicorns/uds-package-irsa/commit/35153d1f295e9631fb5f3d22d2ffe6fd45fe70c5))
+* **deps:** update irsa to v1.4.1 (https://github.com/defenseunicorns/uds-package-irsa/pull/22) ([6c2bff0](https://github.com/defenseunicorns/uds-package-irsa/commit/6c2bff07016657712f7630f12b22e455ce647e6c))
+
 ## [0.1.2](https://github.com/defenseunicorns/uds-package-irsa/compare/v0.1.1...v0.1.2) (2024-01-09)
 
 
