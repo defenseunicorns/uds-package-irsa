@@ -20,7 +20,7 @@ jobs:
     name: Package
     strategy:
       matrix:
-        flavor: [""]
+        flavor: ["upstream"]
         type: [install, upgrade]
 
     steps:
