@@ -10,3 +10,9 @@ tasks:
       - task: create:package
       - task: setup:k3d-test-cluster
       - task: deploy:package
+
+  - name: create-package
+    actions:
+      - task: create:package
+        with:
+          architecture: ${ZARF_ARCHITECTURE}
