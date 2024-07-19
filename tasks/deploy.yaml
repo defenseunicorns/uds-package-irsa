@@ -1,6 +1,0 @@
-tasks:
-  - name: package
-    actions:
-      - description: "Deploy the Zarf Package"
-        cmd: |
-          zarf package deploy zarf-package-pod-identity-webhook-*.tar.zst --confirm --no-progress

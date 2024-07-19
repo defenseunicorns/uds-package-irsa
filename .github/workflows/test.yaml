@@ -1,4 +1,4 @@
-name: Test Package
+name: Test
 
 on:
   pull_request:
@@ -14,21 +14,38 @@ permissions:
   contents: read
 
 jobs:
-  test:
+  test-package:
     runs-on: "ubuntu-latest"
     timeout-minutes: 30
-    name: Test
+    name: Package
+    strategy:
+      matrix:
+        flavor: [upstream]
+        type: [install]
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
 
       - name: Environment setup
-        uses: ./.github/actions/setup
+        uses: defenseunicorns/uds-common/.github/actions/setup@a7549ad75a9bbd8e71ce2236ec17c1e33ec4df61 # v0.8.1
+        with:
+          registry1Username: ${{ secrets.IRON_BANK_ROBOT_USERNAME }}
+          registry1Password: ${{ secrets.IRON_BANK_ROBOT_PASSWORD }}
+          ghToken: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Test the package
-        run: uds run test-package
+      - name: Test
+        uses: defenseunicorns/uds-common/.github/actions/test@a7549ad75a9bbd8e71ce2236ec17c1e33ec4df61 # v0.8.1
+        with:
+          flavor: ${{ matrix.flavor }}
+          type: ${{ matrix.type }}
+
+      - name: Debug Output
+        if: ${{ always() }}
+        uses: defenseunicorns/uds-common/.github/actions/debug-output@a7549ad75a9bbd8e71ce2236ec17c1e33ec4df61 # v0.8.1
 
       - name: Save logs
         if: always()
-        uses: ./.github/actions/save-logs
+        uses: defenseunicorns/uds-common/.github/actions/save-logs@a7549ad75a9bbd8e71ce2236ec17c1e33ec4df61 # v0.8.1
+        with:
+          suffix: ${{ matrix.type }}-${{ matrix.flavor }}-${{ github.run_id }}-${{ github.run_attempt }}
