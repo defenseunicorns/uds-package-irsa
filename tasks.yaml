@@ -1,8 +1,8 @@
 includes:
-  - create: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.9.0/tasks/create.yaml
+  - create: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.11.1/tasks/create.yaml
   # Not using common setup because we don't need zarf init or core for this yolo package at this time
   - setup: tasks/setup.yaml
-  - deploy: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.9.0/tasks/deploy.yaml
+  - deploy: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.11.1/tasks/deploy.yaml
 
 tasks:
   - name: test-package
