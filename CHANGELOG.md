@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.1](https://github.com/defenseunicorns/uds-package-irsa/compare/v0.2.0...v0.2.1) (2024-08-09)
+
+
+### Miscellaneous
+
+* **deps:** update dependency defenseunicorns/uds-common to v0.11.1 ([#26](https://github.com/defenseunicorns/uds-package-irsa/issues/26)) ([7b68dd3](https://github.com/defenseunicorns/uds-package-irsa/commit/7b68dd33a01d14e078eabf8e2b66ce9fc18f777f))
+* **deps:** update dependency defenseunicorns/uds-common to v0.11.2 ([#28](https://github.com/defenseunicorns/uds-package-irsa/issues/28)) ([228fa03](https://github.com/defenseunicorns/uds-package-irsa/commit/228fa03f818381ea5c372faa470f54621c16b87d))
+* **deps:** update dependency defenseunicorns/uds-common to v0.9.0 ([#23](https://github.com/defenseunicorns/uds-package-irsa/issues/23)) ([af139e1](https://github.com/defenseunicorns/uds-package-irsa/commit/af139e137d01962f495de1ee47ee3021b1902e3d))
+* **deps:** update githubactions ([#25](https://github.com/defenseunicorns/uds-package-irsa/issues/25)) ([7bf6c39](https://github.com/defenseunicorns/uds-package-irsa/commit/7bf6c395eda3ca87b0d36e1a3514ee9cf4b32587))
+* **deps:** update irsa to v0.5.6 ([#29](https://github.com/defenseunicorns/uds-package-irsa/issues/29)) ([a67282b](https://github.com/defenseunicorns/uds-package-irsa/commit/a67282b53def27e423e99686fa3193ee283b3b79))
+* fix codeowners ([#27](https://github.com/defenseunicorns/uds-package-irsa/issues/27)) ([75c605f](https://github.com/defenseunicorns/uds-package-irsa/commit/75c605fe23679f8d40846a49ffef649bd33415eb))
+
 ## [0.2.0](https://github.com/defenseunicorns/uds-package-irsa/compare/v0.1.2...v0.2.0) (2024-07-19)
 
 
